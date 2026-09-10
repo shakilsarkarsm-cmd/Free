@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Payment Successful</title>
+<style>
+  body { font-family: -apple-system, sans-serif; background: #f7f7f9; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin:0; }
+  .card { background: #fff; border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.08); padding: 40px; text-align: center; max-width: 400px; }
+  .check { font-size: 48px; }
+  h1 { font-size: 20px; margin: 12px 0 8px; color: #1a1a1a; }
+  p { color: #666; font-size: 14px; }
+  code { background: #f1f1f1; padding: 2px 6px; border-radius: 6px; }
+  a { display: inline-block; margin-top: 20px; color: #e2136e; text-decoration: none; font-weight: 600; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="check">✅</div>
+    <h1>Payment received</h1>
+    <p id="details">Thank you! Your payment was successful.</p>
+    <a href="/">Back to home</a>
+  </div>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const orderId = params.get('orderId');
+  const trxID = params.get('trxID');
+  const detailsEl = document.getElementById('details');
+  let text = 'Thank you! Your payment was successful.';
+  if (orderId) text += ` Order: ${orderId}.`;
+  if (trxID) text += ` Transaction ID: ${trxID}.`;
+  detailsEl.textContent = text;
+</script>
+</body>
+</html>

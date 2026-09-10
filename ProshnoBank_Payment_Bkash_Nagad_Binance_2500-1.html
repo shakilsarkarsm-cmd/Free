@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ProshnoBank — SSC &amp; HSC Board Question Papers</title>
+<meta name="description" content="Browse and download real SSC and HSC board exam question papers by class, board, subject and year.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FAFAF9;
+    --surface:#FFFFFF;
+    --ink:#171717;
+    --muted:#6B6B68;
+    --muted-2:#98968F;
+    --line:#E5E4E0;
+    --accent:#B23B3B;
+    --accent-deep:#8F2E2E;
+    --accent-tint:#F6E8E7;
+    --radius:8px;
+    --max:1160px;
+    --font-display:'Space Grotesk','Arial Narrow',sans-serif;
+    --font-body:'Work Sans','Helvetica Neue',Arial,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--font-body);
+    font-size:16px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:var(--font-display);margin:0;line-height:1.2;font-weight:600;}
+  p{margin:0;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  ul{margin:0;padding:0;list-style:none;}
+  button{font-family:var(--font-body);}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px;}
+  a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{
+    outline:2px solid var(--accent-deep);outline-offset:2px;
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.01ms !important;transition-duration:0.01ms !important;}
+  }
+
+  /* ---- Header ---- */
+  header{
+    position:sticky;top:0;z-index:60;
+    background:rgba(250,250,249,0.94);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-row{display:flex;align-items:center;justify-content:space-between;height:72px;gap:24px;}
+  .brand{display:flex;align-items:center;gap:10px;}
+  .brand svg{flex-shrink:0;}
+  .brand-name{font-family:var(--font-display);font-size:1.15rem;font-weight:700;}
+  nav.primary-nav{display:flex;align-items:center;gap:30px;}
+  nav.primary-nav a{font-size:0.95rem;color:var(--ink);padding:6px 0;border-bottom:1px solid transparent;transition:border-color .15s ease;}
+  nav.primary-nav a:hover{border-color:var(--accent);}
+  .nav-right{display:flex;align-items:center;gap:16px;}
+  .cart-btn{position:relative;display:flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);cursor:pointer;}
+  .cart-badge{position:absolute;top:-6px;right:-6px;background:var(--accent);color:#fff;font-size:0.68rem;font-weight:700;min-width:18px;height:18px;border-radius:9px;display:flex;align-items:center;justify-content:center;padding:0 4px;}
+  .menu-toggle{display:none;flex-direction:column;gap:4px;background:none;border:1px solid var(--line);border-radius:var(--radius);width:40px;height:40px;align-items:center;justify-content:center;cursor:pointer;}
+  .menu-toggle span{width:16px;height:1.5px;background:var(--ink);display:block;}
+
+  /* ---- Buttons ---- */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:0.85rem 1.5rem;font-weight:600;font-size:0.92rem;border-radius:var(--radius);border:1px solid transparent;cursor:pointer;transition:background-color .15s ease,border-color .15s ease,color .15s ease;}
+  .btn-primary{background:var(--ink);color:#fff;}
+  .btn-primary:hover{background:#000;}
+  .btn-accent{background:var(--accent);color:#fff;}
+  .btn-accent:hover{background:var(--accent-deep);}
+  .btn-ghost{background:var(--surface);color:var(--ink);border-color:var(--line);}
+  .btn-ghost:hover{border-color:var(--ink);}
+  .btn-sm{padding:0.6rem 1.1rem;font-size:0.85rem;}
+  .btn-block{width:100%;}
+
+  /* ---- Hero ---- */
+  .hero{padding:80px 0 56px;}
+  .hero-inner{max-width:700px;margin:0 auto;text-align:center;}
+  .hero h1{font-size:clamp(2rem,4.6vw,3.1rem);letter-spacing:-0.01em;}
+  .hero .lede{margin:20px auto 0;max-width:52ch;color:var(--muted);font-size:1.08rem;}
+  .search-panel{
+    margin:40px auto 0;max-width:680px;
+    background:var(--surface);border:1px solid var(--line);border-radius:12px;
+    padding:10px;display:flex;gap:8px;flex-wrap:wrap;
+  }
+  .search-panel select, .search-panel input[type="text"]{
+    border:none;background:transparent;font-family:var(--font-body);font-size:0.95rem;color:var(--ink);padding:10px 8px;flex:1;min-width:110px;
+  }
+  .search-panel select:focus, .search-panel input:focus{outline:none;}
+  .search-panel .divider{width:1px;background:var(--line);margin:6px 0;}
+  .hero-stats{display:flex;justify-content:center;gap:48px;margin-top:48px;flex-wrap:wrap;}
+  .hero-stats .stat{text-align:center;}
+  .hero-stats .num{font-family:var(--font-display);font-size:1.7rem;font-weight:700;color:var(--accent);}
+  .hero-stats .label{font-size:0.88rem;color:var(--muted);margin-top:4px;}
+
+  /* ---- Year picker ---- */
+  .year-picker-grid{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;}
+  .year-tile{
+    border:1px solid var(--line);border-radius:var(--radius);padding:14px 24px;
+    font-family:var(--font-display);font-weight:700;font-size:1.05rem;
+    background:var(--surface);cursor:pointer;color:var(--ink);
+    transition:border-color .15s ease,background-color .15s ease,color .15s ease;
+  }
+  .year-tile:hover{border-color:var(--ink);}
+  .year-tile.active{background:var(--ink);color:#fff;border-color:var(--ink);}
+
+  /* ---- Section shell ---- */
+  .section{padding:88px 0;}
+  .section-head{max-width:600px;margin:0 auto 48px;text-align:center;}
+  .section-head h2{font-size:clamp(1.6rem,2.6vw,2rem);}
+  .section-head p{margin-top:14px;color:var(--muted);font-size:1.02rem;}
+  .section-alt{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+
+  /* ---- Filter bar ---- */
+  .filter-bar{
+    display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+    padding:16px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    margin-bottom:36px;
+  }
+  .pill-group{display:flex;gap:8px;}
+  .pill{border:1px solid var(--line);background:transparent;border-radius:999px;padding:8px 16px;font-size:0.88rem;font-weight:600;cursor:pointer;color:var(--muted);}
+  .pill.active{background:var(--ink);color:#fff;border-color:var(--ink);}
+  .filter-bar select{
+    border:1px solid var(--line);border-radius:var(--radius);padding:9px 12px;font-size:0.88rem;font-family:var(--font-body);color:var(--ink);background:var(--bg);
+  }
+  .filter-bar .search-mini{flex:1;min-width:160px;display:flex;align-items:center;border:1px solid var(--line);border-radius:var(--radius);padding:0 12px;background:var(--bg);}
+  .filter-bar .search-mini input{border:none;background:transparent;padding:9px 8px;font-size:0.88rem;width:100%;font-family:var(--font-body);color:var(--ink);}
+  .filter-bar .search-mini input:focus{outline:none;}
+
+  /* ---- Paper grid & cards ---- */
+  .papers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .paper-card{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    overflow:hidden;display:flex;flex-direction:column;
+  }
+  .paper-card .rule{height:3px;background:var(--accent);}
+  .paper-card .body{padding:22px;display:flex;flex-direction:column;gap:14px;flex:1;}
+  .card-top{display:flex;align-items:center;justify-content:space-between;}
+  .level-badge{font-size:0.72rem;font-weight:700;border:1px solid var(--line);border-radius:999px;padding:3px 10px;color:var(--muted);}
+  .card-year{font-size:0.85rem;color:var(--muted-2);}
+  .card-subject{font-size:1.25rem;font-weight:700;}
+  .card-meta-1{font-size:0.9rem;color:var(--muted);}
+  .card-stats{display:flex;gap:20px;padding-top:12px;border-top:1px solid var(--line);}
+  .card-stats .item{font-size:0.85rem;color:var(--muted);}
+  .card-stats .item b{color:var(--ink);font-weight:600;}
+  .card-footer{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:6px;}
+  .card-price{font-family:var(--font-display);font-weight:700;font-size:1.15rem;color:var(--accent);}
+  .empty-state{grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--muted);}
+
+  /* ---- How it works ---- */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+  .step{text-align:left;}
+  .step-num{
+    width:38px;height:38px;border-radius:50%;border:1px solid var(--accent);color:var(--accent);
+    display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;margin-bottom:18px;
+  }
+  .step h3{font-size:1.1rem;margin-bottom:8px;}
+  .step p{color:var(--muted);font-size:0.95rem;}
+
+  /* ---- Why us ---- */
+  .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+  .why-list li{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line);}
+  .why-list li:first-child{border-top:1px solid var(--line);}
+  .why-list .icon{flex-shrink:0;width:22px;height:22px;color:var(--accent);margin-top:2px;}
+  .why-list h3{font-size:1rem;font-weight:600;margin-bottom:4px;}
+  .why-list p{color:var(--muted);font-size:0.92rem;}
+
+  .paper-mock{position:relative;height:340px;display:flex;align-items:center;justify-content:center;}
+  .sheet{
+    position:absolute;width:230px;height:290px;background:var(--surface);border:1px solid var(--line);border-radius:6px;
+    box-shadow:none;
+  }
+  .sheet.back{transform:rotate(6deg) translate(18px,6px);background:var(--bg);}
+  .sheet.front{padding:22px 22px 22px 30px;display:flex;flex-direction:column;gap:10px;}
+  .sheet.front::before{
+    content:"";position:absolute;left:20px;top:0;bottom:0;width:1px;background:var(--accent);
+  }
+  .sheet-line{height:7px;background:var(--line);border-radius:2px;}
+  .sheet-line.w1{width:70%;}
+  .sheet-line.w2{width:95%;}
+  .sheet-line.w3{width:60%;}
+  .sheet-line.w4{width:85%;}
+  .sheet-title{font-family:var(--font-display);font-size:0.85rem;font-weight:700;margin-bottom:6px;}
+  .sheet-sub{font-size:0.7rem;color:var(--muted);margin-bottom:8px;}
+
+  /* ---- Testimonials ---- */
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .testi-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px;}
+  .testi-card p.quote{font-size:0.98rem;color:var(--ink);}
+  .testi-card footer{margin-top:16px;font-size:0.85rem;color:var(--muted);}
+
+  /* ---- Newsletter ---- */
+  .newsletter{
+    background:var(--ink);color:#fff;border-radius:16px;padding:56px 48px;
+    display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;
+  }
+  .newsletter h2{color:#fff;font-size:1.5rem;}
+  .newsletter p{color:#C9C7C2;margin-top:8px;max-width:40ch;}
+  .newsletter-form{display:flex;gap:10px;flex-wrap:wrap;}
+  .newsletter-form input{
+    padding:0.85rem 1.1rem;border-radius:var(--radius);border:1px solid #3A3A38;background:#232321;color:#fff;font-family:var(--font-body);min-width:220px;
+  }
+  .newsletter-form input::placeholder{color:#8B8A86;}
+
+  /* ---- Footer ---- */
+  footer.site-footer{padding:56px 0 32px;border-top:1px solid var(--line);}
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px;margin-bottom:40px;}
+  .footer-grid h4{font-size:0.9rem;margin-bottom:14px;}
+  .footer-grid li{margin-bottom:10px;font-size:0.9rem;color:var(--muted);}
+  .footer-grid li a:hover{color:var(--ink);}
+  .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding-top:24px;border-top:1px solid var(--line);font-size:0.85rem;color:var(--muted);}
+
+  /* ---- Cart panel ---- */
+  .cart-panel{
+    position:fixed;top:0;right:0;height:100%;width:340px;max-width:88vw;background:var(--surface);
+    border-left:1px solid var(--line);box-shadow:-8px 0 24px rgba(0,0,0,0.06);
+    transform:translateX(100%);transition:transform .25s ease;z-index:100;
+    display:flex;flex-direction:column;
+  }
+  .cart-panel.open{transform:translateX(0);}
+  .cart-head{display:flex;justify-content:space-between;align-items:center;padding:20px;border-bottom:1px solid var(--line);}
+  .cart-head h3{font-size:1.1rem;}
+  .cart-close{background:none;border:none;font-size:1.3rem;cursor:pointer;line-height:1;color:var(--muted);}
+  .cart-items{flex:1;overflow-y:auto;padding:12px 20px;}
+  .cart-item{display:flex;justify-content:space-between;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--line);gap:10px;}
+  .cart-item .name{font-size:0.92rem;}
+  .cart-item .meta{font-size:0.78rem;color:var(--muted);margin-top:2px;}
+  .cart-item button{background:none;border:none;color:var(--muted-2);cursor:pointer;font-size:0.78rem;text-decoration:underline;padding:0;margin-top:6px;}
+  .cart-empty{padding:40px 0;text-align:center;color:var(--muted);font-size:0.92rem;}
+  .cart-foot{padding:20px;border-top:1px solid var(--line);}
+  .cart-total{display:flex;justify-content:space-between;font-weight:600;margin-bottom:14px;}
+  .cart-note{font-size:0.78rem;color:var(--muted);margin-top:10px;line-height:1.5;}
+  .overlay{position:fixed;inset:0;background:rgba(23,23,23,0.3);z-index:90;opacity:0;pointer-events:none;transition:opacity .2s ease;}
+  .overlay.show{opacity:1;pointer-events:auto;}
+
+  /* ---- Responsive ---- */
+  @media (max-width:920px){
+    .papers-grid{grid-template-columns:repeat(2,1fr);}
+    .steps{grid-template-columns:1fr;gap:28px;}
+    .why-grid{grid-template-columns:1fr;gap:36px;}
+    .testi-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+    .paper-mock{order:-1;height:260px;}
+  }
+  @media (max-width:760px){
+    nav.primary-nav{
+      position:absolute;top:72px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--line);
+      flex-direction:column;align-items:flex-start;padding:8px 28px 20px;display:none;gap:0;
+    }
+    nav.primary-nav.open{display:flex;}
+    nav.primary-nav a{width:100%;padding:12px 0;}
+    .menu-toggle{display:flex;}
+    .papers-grid{grid-template-columns:1fr;}
+    .search-panel .divider{display:none;}
+    .search-panel{flex-direction:column;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+    .newsletter{flex-direction:column;align-items:flex-start;padding:40px 28px;}
+  }
+</style>
+
+<style id="single-file-payment-css">
+#payment-screen{display:none;position:fixed;inset:0;z-index:1000;background:#1f2327;align-items:center;justify-content:center;padding:18px;overflow:auto}
+#payment-screen.show{display:flex}
+.pay-ticket{width:100%;max-width:410px;background:#f2ece0;color:#16191c;border-radius:8px;box-shadow:0 24px 70px rgba(0,0,0,.5);overflow:hidden}
+.pay-head{padding:25px 25px 20px}
+.pay-brand{display:flex;justify-content:space-between;align-items:center;font-weight:700;margin-bottom:18px}
+.pay-brand small{font-weight:400;color:#7c7566}
+.pay-amount{font-size:34px;font-weight:700;border-bottom:1px solid #d9cfba;padding-bottom:16px}
+.pay-info{margin-top:15px;color:#7c7566;font-size:12px}
+.pay-body{padding:22px 25px 26px}
+.pay-method-title{font-size:12px;color:#7c7566;margin-bottom:10px}
+.pay-number{background:#fff;border:1px solid #ddd2bd;border-radius:6px;padding:14px;text-align:center;font-size:22px;font-weight:800;letter-spacing:1px;margin-bottom:12px}
+.copy-btn,.submit-trx,.back-btn{width:100%;padding:12px;border:0;border-radius:6px;font-weight:700;cursor:pointer}
+.copy-btn{background:#171717;color:#fff;margin-bottom:16px}
+.trx-label{font-size:12px;color:#7c7566;display:block;margin:10px 0 6px}
+#trx-input{width:100%;padding:12px;border:1px solid #d9cfba;border-radius:6px;font-size:15px;background:#fff}
+.submit-trx{background:#e2136e;color:#fff;margin-top:12px}
+.back-btn{background:transparent;border:1px solid #c9bfae;margin-top:8px}
+.pay-note{font-size:11px;color:#7c7566;line-height:1.5;text-align:center;margin-top:14px}
+.pay-timer{font-size:13px;text-align:center;color:#8f2e2e;margin:10px 0}
+.pay-result{display:none;text-align:center;padding:25px}
+.pay-result.show{display:block}
+.pay-result .big{font-size:48px}
+.pay-result h2{margin:8px 0}
+.pay-result p{color:#6b6b68;font-size:13px}
+@media(max-width:480px){.pay-ticket{max-width:100%}}
+</style>
+</head>
+<body>
+
+<div class="overlay" id="overlay"></div>
+
+<header>
+  <div class="wrap nav-row">
+    <a href="#top" class="brand">
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="5" y="3" width="20" height="24" rx="2" stroke="#171717" stroke-width="1.6"/>
+        <line x1="9" y1="10" x2="21" y2="10" stroke="#B23B3B" stroke-width="1.6"/>
+        <line x1="9" y1="15" x2="21" y2="15" stroke="#E5E4E0" stroke-width="1.6"/>
+        <line x1="9" y1="20" x2="17" y2="20" stroke="#E5E4E0" stroke-width="1.6"/>
+      </svg>
+      <span class="brand-name">ProshnoBank</span>
+    </a>
+    <nav class="primary-nav" id="primary-nav">
+      <a href="#browse">Browse papers</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#why-us">Why us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-right">
+      <button class="cart-btn" id="cart-btn" aria-label="Open cart">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 4h2l2.4 12.4a2 2 0 0 0 2 1.6h7.2a2 2 0 0 0 2-1.6L20 8H6" stroke="#171717" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="21" r="1.4" fill="#171717"/><circle cx="17" cy="21" r="1.4" fill="#171717"/></svg>
+        <span class="cart-badge" id="cart-badge" style="display:none;">0</span>
+      </button>
+      <a href="#browse" class="btn btn-primary btn-sm" style="display:none;" id="get-started-desktop">Get started</a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <h1>Real board question papers, organized and ready to download.</h1>
+      <p class="lede">Search past SSC and HSC papers by class, board, subject, and year. Preview details, pay securely, and get your PDF instantly.</p>
+
+      <form class="search-panel" id="hero-search-form" role="search" aria-label="Search question papers">
+        <select id="hero-level" aria-label="Class">
+          <option value="">Class</option>
+          <option value="SSC">SSC</option>
+          <option value="HSC">HSC</option>
+        </select>
+        <div class="divider"></div>
+        <input type="text" id="hero-text" placeholder="Search subject or board, e.g. Physics, Dhaka" aria-label="Search subject or board">
+        <button type="submit" class="btn btn-accent btn-sm">Search</button>
+      </form>
+
+      <div class="hero-stats">
+        <div class="stat"><span class="num">500+</span><div class="label">papers available</div></div>
+        <div class="stat"><span class="num">8</span><div class="label">education boards covered</div></div>
+        <div class="stat"><span class="num">10 yrs</span><div class="label">of past papers</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="by-year" style="padding-top:0;">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Browse by year</h2>
+        <p>Jump straight to the exam year you need. Every board we carry, sorted year by year.</p>
+      </div>
+      <div class="year-picker-grid" id="year-picker-grid"></div>
+    </div>
+  </section>
+
+  <section class="section" id="browse">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Browse question papers</h2>
+        <p>Filter by class, board, subject, and year to find exactly what you need.</p>
+      </div>
+
+      <div class="filter-bar">
+        <div class="pill-group" id="level-pills">
+          <button class="pill active" data-level="">All</button>
+          <button class="pill" data-level="SSC">SSC</button>
+          <button class="pill" data-level="HSC">HSC</button>
+        </div>
+        <div class="pill-group" id="group-pills" style="display:none;">
+          <button class="pill active" data-group="">All groups</button>
+          <button class="pill" data-group="Science">Science</button>
+          <button class="pill" data-group="Humanities">Humanities</button>
+          <button class="pill" data-group="Commerce">Commerce</button>
+        </div>
+        <select id="board-select" aria-label="Filter by board"><option value="">All boards</option></select>
+        <select id="subject-select" aria-label="Filter by subject"><option value="">All subjects</option></select>
+        <select id="year-select" aria-label="Filter by year"><option value="">All years</option></select>
+        <div class="search-mini">
+          <input type="text" id="filter-search" placeholder="Search...">
+        </div>
+      </div>
+
+      <div class="papers-grid" id="papers-grid"></div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="how-it-works">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>How it works</h2>
+        <p>From search to download, in three steps.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3>Search &amp; select</h3>
+          <p>Filter by class, board, subject, and year, then add the papers you need to your cart.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3>Pay securely</h3>
+          <p>Checkout using bKash, Nagad, or card. Every transaction is protected and confirmed instantly.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3>Download instantly</h3>
+          <p>Get a clean, print-ready PDF in your inbox and your account, available to re-download anytime.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="why-us">
+    <div class="wrap why-grid">
+      <ul class="why-list">
+        <li>
+          <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4 10-10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div><h3>Verified against board originals</h3><p>Every paper is checked against the official board copy before it's listed.</p></div>
+        </li>
+        <li>
+          <svg class="icon" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <div><h3>Instant delivery</h3><p>No waiting — your PDF is ready the moment payment is confirmed.</p></div>
+        </li>
+        <li>
+          <svg class="icon" viewBox="0 0 24 24" fill="none"><rect x="3" y="7" width="18" height="13" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 10h18M8 3v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <div><h3>Updated every session</h3><p>New question papers are added as soon as each exam cycle ends.</p></div>
+        </li>
+        <li>
+          <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M12 3l2.4 5.1 5.6.7-4.1 3.9 1 5.6L12 15.9 7.1 18.3l1-5.6L4 8.8l5.6-.7L12 3z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          <div><h3>Fair pricing</h3><p>Individual papers from ৳39, with bundle pricing for full subject sets.</p></div>
+        </li>
+      </ul>
+      <div class="paper-mock">
+        <div class="sheet back"></div>
+        <div class="sheet front">
+          <div class="sheet-title">SSC — 2024</div>
+          <div class="sheet-sub">Dhaka Board · Physics · Paper I</div>
+          <div class="sheet-line w2"></div>
+          <div class="sheet-line w1"></div>
+          <div class="sheet-line w3"></div>
+          <div class="sheet-line w2"></div>
+          <div class="sheet-line w4"></div>
+          <div class="sheet-line w1"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>What students say</h2>
+        <p>Placeholder quotes — swap in feedback from your own users.</p>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <p class="quote">"Found five years of Rajshahi Board physics papers in one place. Saved me a full weekend of searching."</p>
+          <footer>HSC candidate, Rajshahi</footer>
+        </div>
+        <div class="testi-card">
+          <p class="quote">"The PDFs are clean and print exactly like the real exam layout. Made practicing under time pressure much easier."</p>
+          <footer>SSC candidate, Dhaka</footer>
+        </div>
+        <div class="testi-card">
+          <p class="quote">"Paying with bKash and getting the file right away meant I didn't have to wait around for anything."</p>
+          <footer>HSC candidate, Chattogram</footer>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="wrap">
+      <div class="newsletter">
+        <div>
+          <h2>Never miss a new paper</h2>
+          <p>Get an email when new board papers, subjects, or years are added.</p>
+        </div>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); this.reset(); alert('This is a demo form — connect an email provider to collect real subscribers.');">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit" class="btn btn-accent">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+<section id="subjects-2023" style="margin:28px 0;padding:22px;border:1px solid #e5e7eb;border-radius:16px;background:#fff;">
+  <h2 style="margin:0 0 14px;">২০২৩ সালের বিষয়সমূহ</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;">
+<div style="padding:10px 12px;border:1px solid #e5e7eb;border-radius:10px;">2023 — বাংলা ১ম পত্র — <b>৳2,500</b></div><div style="padding:10px 12px;border:1px solid #e5e7eb;border-radius:10px;">2023 — বাংলা ২য় পত্র — <b>৳2,500</b></div><div style="padding:10px 12px;border:1px solid #e5e7eb;border-radius:10px;">2023 — ইংরেজি ১ম পত্র — <b>৳2,500</b></div><div style="padding:10px 12px;border:1px solid #e5e7eb;border-radius:10px;">2023 — ইংরেজি ২য় পত্র — <b>৳2,500</b></div><div style="padding:10px 12px;border:1px solid #e5e7eb;border-radius:10px;">2023 — তথ্য ও যোগাযোগ প্রযুক্তি — <b>৳2,500</b></div><div style="padding:10px 12px;border:1px solid #e5e7eb;border-radius:10px;">2023 — পদার্থবিজ্ঞান ১ম পত্র — <b>৳2,500</b></div><div style="padding:10px 12px;border:1px solid #e5e7eb;border-radius:10px;">2023 — পদার্থবিজ্ঞান ২য় পত্র — <b>৳2,500</b></div><div style="padding:10px 12px;border:1px solid #e5e7eb;border-radius:10px;">2023 — রসায়ন ১ম পত্র — <b>৳2,500</b></div><div style="padding:10px 12px;border:1px solid #e5e7eb;border-radius:10px;">2023 — রসায়ন ২য় পত্র — <b>৳2,500</b></div><div style="padding:10px 12px;border:1px solid #e5e7eb;border-radius:10px;">2023 — জীববিজ্ঞান ১ম পত্র — <b>৳2,500</b></div><div style="padding:10px 12px;border:1px solid #e5e7eb;border-radius:10px;">2023 — জীববিজ্ঞান ২য় পত্র — <b>৳2,500</b></div><div style="padding:10px 12px;border:1px solid #e5e7eb;border-radius:10px;">2023 — উচ্চতর গণিত ১ম পত্র — <b>৳2,500</b></div><div style="padding:10px 12px;border:1px solid #e5e7eb;border-radius:10px;">2023 — উচ্চতর গণিত ২য় পত্র — <b>৳2,500</b></div><div style="padding:10px 12px;border:1px solid #e5e7eb;border-radius:10px;">2023 — গণিত ১ম পত্র — <b>৳2,500</b></div><div style="padding:10px 12px;border:1px solid #e5e7eb;border-radius:10px;">2023 — গণিত ২য় পত্র — <b>৳2,500</b></div><div style="padding:10px 12px;border:1px solid #e5e7eb;border-radius:10px;">2023 — হিসাববিজ্ঞান ১ম পত্র — <b>৳2,500</b></div><div style="padding:10px 12px;border:1px solid #e5e7eb;border-radius:10px;">2023 — হিসাববিজ্ঞান ২য় পত্র — <b>৳2,500</b></div><div style="padding:10px 12px;border:1px solid #e5e7eb;border-radius:10px;">2023 — ব্যবসায় সংগঠন ও ব্যবস্থাপনা ১ম পত্র — <b>৳2,500</b></div><div style="padding:10px 12px;border:1px solid #e5e7eb;border-radius:10px;">2023 — ব্যবসায় সংগঠন ও ব্যবস্থাপনা ২য় পত্র — <b>৳2,500</b></div><div style="padding:10px 12px;border:1px solid #e5e7eb;border-radius:10px;">2023 — ফিন্যান্স, ব্যাংকিং ও বিমা ১ম পত্র — <b>৳2,500</b></div><div style="padding:10px 12px;border:1px solid #e5e7eb;border-radius:10px;">2023 — ফিন্যান্স, ব্যাংকিং ও বিমা ২য় পত্র — <b>৳2,500</b></div><div style="padding:10px 12px;border:1px solid #e5e7eb;border-radius:10px;">2023 — অর্থনীতি ১ম পত্র — <b>৳2,500</b></div><div style="padding:10px 12px;border:1px solid #e5e7eb;border-radius:10px;">2023 — অর্থনীতি ২য় পত্র — <b>৳2,500</b></div><div style="padding:10px 12px;border:1px solid #e5e7eb;border-radius:10px;">2023 — পৌরনীতি ও সুশাসন ১ম পত্র — <b>৳2,500</b></div><div style="padding:10px 12px;border:1px solid #e5e7eb;border-radius:10px;">2023 — পৌরনীতি ও সুশাসন ২য় পত্র — <b>৳2,500</b></div><div style="padding:10px 12px;border:1px solid #e5e7eb;border-radius:10px;">2023 — ইতিহাস ১ম পত্র — <b>৳2,500</b></div><div style="padding:10px 12px;border:1px solid #e5e7eb;border-radius:10px;">2023 — ইতিহাস ২য় পত্র — <b>৳2,500</b></div><div style="padding:10px 12px;border:1px solid #e5e7eb;border-radius:10px;">2023 — সমাজবিজ্ঞান ১ম পত্র — <b>৳2,500</b></div><div style="padding:10px 12px;border:1px solid #e5e7eb;border-radius:10px;">2023 — সমাজবিজ্ঞান ২য় পত্র — <b>৳2,500</b></div><div style="padding:10px 12px;border:1px solid #e5e7eb;border-radius:10px;">2023 — ভূগোল ১ম পত্র — <b>৳2,500</b></div><div style="padding:10px 12px;border:1px solid #e5e7eb;border-radius:10px;">2023 — ভূগোল ২য় পত্র — <b>৳2,500</b></div><div style="padding:10px 12px;border:1px solid #e5e7eb;border-radius:10px;">2023 — যুক্তিবিদ্যা ১ম পত্র — <b>৳2,500</b></div><div style="padding:10px 12px;border:1px solid #e5e7eb;border-radius:10px;">2023 — যুক্তিবিদ্যা ২য় পত্র — <b>৳2,500</b></div><div style="padding:10px 12px;border:1px solid #e5e7eb;border-radius:10px;">2023 — মনোবিজ্ঞান ১ম পত্র — <b>৳2,500</b></div><div style="padding:10px 12px;border:1px solid #e5e7eb;border-radius:10px;">2023 — মনোবিজ্ঞান ২য় পত্র — <b>৳2,500</b></div><div style="padding:10px 12px;border:1px solid #e5e7eb;border-radius:10px;">2023 — ইসলামের ইতিহাস ও সংস্কৃতি ১ম পত্র — <b>৳2,500</b></div><div style="padding:10px 12px;border:1px solid #e5e7eb;border-radius:10px;">2023 — ইসলামের ইতিহাস ও সংস্কৃতি ২য় পত্র — <b>৳2,500</b></div><div style="padding:10px 12px;border:1px solid #e5e7eb;border-radius:10px;">2023 — ইসলাম শিক্ষা ১ম পত্র — <b>৳2,500</b></div><div style="padding:10px 12px;border:1px solid #e5e7eb;border-radius:10px;">2023 — ইসলাম শিক্ষা ২য় পত্র — <b>৳2,500</b></div>
+  </div>
+</section>
+
+</main>
+
+
+<div id="payment-screen" aria-hidden="true">
+  <div class="pay-ticket">
+    <div id="payment-form">
+      <div class="pay-head">
+        <div class="pay-brand"><span>Payment Page</span><small>Secure checkout</small></div>
+        <div class="pay-amount">৳ <span id="pay-amount">0</span></div>
+        <div class="pay-info" id="pay-order-info">Order payment</div>
+      </div>
+      <div class="pay-body">
+        <div class="pay-method-title" id="pay-method-title">Send payment to bKash</div>
+        <div class="pay-number" id="pay-number">01750633432</div>
+        <button class="copy-btn" id="copy-number">Copy Number</button>
+        <label class="trx-label" for="trx-input">Transaction ID (TrxID)</label>
+        <input id="trx-input" type="text" autocomplete="off" placeholder="Enter TrxID after payment">
+        <div class="pay-timer">Please submit within <b id="pay-timer">10:00</b></div>
+        <button class="submit-trx" id="submit-trx">Submit TrxID</button>
+        <button class="back-btn" id="back-payment">Cancel / Back</button>
+        <div class="pay-note">This page records the submitted TrxID locally for this demo. Real bKash/Nagad API verification requires an approved merchant account and a server-side backend.</div>
+      </div>
+    </div>
+    <div class="pay-result" id="payment-success">
+      <div class="big">✅</div>
+      <h2>Payment submitted</h2>
+      <p id="success-details"></p>
+      <button class="submit-trx" id="finish-payment">Back to ProshnoBank</button>
+    </div>
+    <div class="pay-result" id="payment-cancel">
+      <div class="big">⚠️</div>
+      <h2>Payment not completed</h2>
+      <p id="cancel-details">The payment was cancelled or not submitted.</p>
+      <button class="submit-trx" id="retry-payment">Try Again</button>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="margin-bottom:12px;">
+          <svg width="26" height="26" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="5" y="3" width="20" height="24" rx="2" stroke="#171717" stroke-width="1.6"/>
+            <line x1="9" y1="10" x2="21" y2="10" stroke="#B23B3B" stroke-width="1.6"/>
+            <line x1="9" y1="15" x2="21" y2="15" stroke="#E5E4E0" stroke-width="1.6"/>
+            <line x1="9" y1="20" x2="17" y2="20" stroke="#E5E4E0" stroke-width="1.6"/>
+          </svg>
+          <span class="brand-name">ProshnoBank</span>
+        </div>
+        <p style="color:var(--muted);font-size:0.9rem;max-width:32ch;">Past SSC and HSC board question papers, organized and ready to download.</p>
+      </div>
+      <div>
+        <h4>Browse</h4>
+        <ul>
+          <li><a href="#browse">SSC papers</a></li>
+          <li><a href="#browse">HSC papers</a></li>
+          <li><a href="#browse">By board</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#how-it-works">How it works</a></li>
+          <li><a href="#why-us">Why us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Payments accepted</h4>
+        <ul>
+          <li>bKash</li>
+          <li>Nagad</li>
+          <li>Visa / Mastercard</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> ProshnoBank. All papers are used for practice purposes only.</span>
+      <span>hello@proshnobank.com</span>
+    </div>
+  </div>
+</footer>
+
+<div class="cart-panel" id="cart-panel" aria-label="Shopping cart">
+  <div class="cart-head">
+    <h3>Your cart</h3>
+    <button class="cart-close" id="cart-close" aria-label="Close cart">&times;</button>
+  </div>
+  <div class="cart-items" id="cart-items"></div>
+  <div class="cart-foot">
+    <div class="cart-total"><span>Total</span><span id="cart-total">৳0</span></div>
+    <button class="btn btn-primary btn-block" id="checkout-btn">Checkout</button>
+    <p class="cart-note" id="cart-note">This is a demo storefront — connect a payment gateway (bKash, Nagad, SSLCommerz, or similar) to accept real payments.</p>
+  </div>
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // ---- Mobile nav ----
+  var menuToggle = document.getElementById('menu-toggle');
+  var primaryNav = document.getElementById('primary-nav');
+  menuToggle.addEventListener('click', function(){
+    var open = primaryNav.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  primaryNav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ primaryNav.classList.remove('open'); menuToggle.setAttribute('aria-expanded','false'); });
+  });
+
+  // ---- Data ----
+  var papers = [
+    {id:1, level:'SSC', board:'Dhaka', subject:'Physics', paper:'Paper I', year:2024, marks:100, duration:'3 hours', price:2500, group:'Science'},
+    {id:2, level:'SSC', board:'Rajshahi', subject:'Mathematics', paper:'', year:2024, marks:100, duration:'3 hours', price:2500, group:'Common'},
+    {id:3, level:'SSC', board:'Chattogram', subject:'Chemistry', paper:'Paper I', year:2023, marks:100, duration:'3 hours', price:2500, group:'Science'},
+    {id:4, level:'HSC', board:'Dhaka', subject:'Physics', paper:'Paper I', year:2024, marks:100, duration:'3 hours', price:2500, group:'Science'},
+    {id:5, level:'HSC', board:'Sylhet', subject:'Biology', paper:'Paper II', year:2024, marks:100, duration:'3 hours', price:2500, group:'Science'},
+    {id:6, level:'HSC', board:'Dhaka', subject:'English', paper:'Paper I', year:2023, marks:100, duration:'3 hours', price:2500, group:'Common'},
+    {id:7, level:'SSC', board:'Dhaka', subject:'Bangla', paper:'Paper I', year:2024, marks:100, duration:'3 hours', price:2500, group:'Common'},
+    {id:8, level:'HSC', board:'Rajshahi', subject:'ICT', paper:'', year:2024, marks:50, duration:'2.5 hours', price:2500, group:'Common'},
+    {id:9, level:'SSC', board:'Barishal', subject:'Higher Math', paper:'', year:2023, marks:100, duration:'3 hours', price:2500, group:'Science'},
+    {id:10, level:'SSC', board:'Khulna', subject:'Physics', paper:'Paper I', year:2022, marks:100, duration:'3 hours', price:2500, group:'Science'},
+    {id:11, level:'HSC', board:'Dhaka', subject:'Chemistry', paper:'Paper I', year:2021, marks:100, duration:'3 hours', price:2500, group:'Science'},
+    {id:12, level:'SSC', board:'Dhaka', subject:'Mathematics', paper:'', year:2020, marks:100, duration:'3 hours', price:2500, group:'Common'},
+    {id:13, level:'HSC', board:'Rajshahi', subject:'Physics', paper:'Paper I', year:2019, marks:100, duration:'3 hours', price:2500, group:'Science'},
+    {id:14, level:'SSC', board:'Cumilla', subject:'Bangla', paper:'Paper I', year:2021, marks:100, duration:'3 hours', price:2500, group:'Common'},
+    {id:15, level:'HSC', board:'Dhaka', subject:'Mathematics', paper:'Paper I', year:2022, marks:100, duration:'3 hours', price:2500, group:'Science'},
+    {id:16, level:'SSC', board:'Mymensingh', subject:'Chemistry', paper:'Paper I', year:2023, marks:100, duration:'3 hours', price:2500, group:'Science'},
+    {id:17, level:'SSC', board:'Dhaka', subject:'History of Bangladesh & World Civ.', paper:'', year:2024, marks:100, duration:'3 hours', price:2500, group:'Humanities'},
+    {id:18, level:'SSC', board:'Rajshahi', subject:'Civics & Good Governance', paper:'', year:2023, marks:100, duration:'3 hours', price:2500, group:'Humanities'},
+    {id:19, level:'HSC', board:'Dhaka', subject:'Economics', paper:'Paper I', year:2024, marks:100, duration:'3 hours', price:2500, group:'Humanities'},
+    {id:20, level:'HSC', board:'Sylhet', subject:'Geography & Environment', paper:'Paper I', year:2023, marks:100, duration:'3 hours', price:2500, group:'Humanities'},
+    {id:21, level:'SSC', board:'Dhaka', subject:'Accounting', paper:'', year:2024, marks:100, duration:'3 hours', price:2500, group:'Commerce'},
+    {id:22, level:'SSC', board:'Chattogram', subject:'Business Entrepreneurship', paper:'', year:2023, marks:100, duration:'3 hours', price:2500, group:'Commerce'},
+    {id:23, level:'HSC', board:'Dhaka', subject:'Accounting', paper:'Paper I', year:2024, marks:100, duration:'3 hours', price:2500, group:'Commerce'},
+    {id:24, level:'HSC', board:'Rajshahi', subject:'Finance, Banking & Insurance', paper:'Paper I', year:2023, marks:100, duration:'3 hours', price:2500, group:'Commerce'}
+  ];
+
+  var filters = { level:'', board:'', subject:'', year:'', text:'', group:'' };
+
+  function uniqueSorted(arr, key){
+    return Array.from(new Set(arr.map(function(p){ return p[key]; }))).sort();
+  }
+
+  function populateSelect(selectEl, values){
+    values.forEach(function(v){
+      var opt = document.createElement('option');
+      opt.value = v; opt.textContent = v;
+      selectEl.appendChild(opt);
+    });
+  }
+
+  var boardSelect = document.getElementById('board-select');
+  var subjectSelect = document.getElementById('subject-select');
+  var yearSelect = document.getElementById('year-select');
+  populateSelect(boardSelect, uniqueSorted(papers, 'board'));
+  populateSelect(subjectSelect, uniqueSorted(papers, 'subject'));
+  var allYearOptions = [];
+  for (var yr = 7; yr >= 2015; yr--) { allYearOptions.push(yr); }
+  populateSelect(yearSelect, allYearOptions);
+
+  function paperCardHTML(p){
+    return '' +
+      '<div class="paper-card">' +
+        '<div class="rule"></div>' +
+        '<div class="body">' +
+          '<div class="card-top"><span class="level-badge">' + p.level + '</span><span class="card-year">' + p.year + '</span></div>' +
+          '<div>' +
+            '<div class="card-subject">' + p.subject + '</div>' +
+            '<div class="card-meta-1">' + p.board + ' Board' + (p.paper ? ' &middot; ' + p.paper : '') + '</div>' +
+          '</div>' +
+          '<div class="card-stats"><span class="item"><b>' + p.marks + '</b> marks</span><span class="item"><b>' + p.duration + '</b></span></div>' +
+          '<div class="card-footer">' +
+            '<span class="card-price">&#2547;' + p.price + '</span>' +
+            '<button class="btn btn-ghost btn-sm" data-add="' + p.id + '">Add to cart</button>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+  }
+
+  function renderGrid(){
+    var grid = document.getElementById('papers-grid');
+    var list = papers.filter(function(p){
+      if (filters.level && p.level !== filters.level) return false;
+      if (filters.board && p.board !== filters.board) return false;
+      if (filters.subject && p.subject !== filters.subject) return false;
+      if (filters.year && String(p.year) !== String(filters.year)) return false;
+      if (filters.group && !(p.group === filters.group || p.group === 'Common')) return false;
+      if (filters.text){
+        var t = filters.text.toLowerCase();
+        if (!(p.subject.toLowerCase().indexOf(t) > -1 || p.board.toLowerCase().indexOf(t) > -1)) return false;
+      }
+      return true;
+    });
+    if (list.length === 0){
+      grid.innerHTML = '<div class="empty-state">No papers match your filters. Try clearing a filter or searching a different term.</div>';
+      return;
+    }
+    grid.innerHTML = list.map(paperCardHTML).join('');
+    grid.querySelectorAll('[data-add]').forEach(function(btn){
+      btn.addEventListener('click', function(){ addToCart(parseInt(btn.getAttribute('data-add'), 10)); });
+    });
+  }
+
+  var groupPillsEl = document.getElementById('group-pills');
+
+  document.getElementById('level-pills').addEventListener('click', function(e){
+    var btn = e.target.closest('.pill');
+    if (!btn) return;
+    document.querySelectorAll('#level-pills .pill').forEach(function(p){ p.classList.remove('active'); });
+    btn.classList.add('active');
+    filters.level = btn.getAttribute('data-level');
+
+    if (filters.level === 'SSC' || filters.level === 'HSC'){
+      groupPillsEl.style.display = 'flex';
+    } else {
+      groupPillsEl.style.display = 'none';
+      filters.group = '';
+      groupPillsEl.querySelectorAll('.pill').forEach(function(p){ p.classList.remove('active'); });
+      groupPillsEl.querySelector('[data-group=""]').classList.add('active');
+    }
+    renderGrid();
+  });
+
+  groupPillsEl.addEventListener('click', function(e){
+    var btn = e.target.closest('.pill');
+    if (!btn) return;
+    groupPillsEl.querySelectorAll('.pill').forEach(function(p){ p.classList.remove('active'); });
+    btn.classList.add('active');
+    filters.group = btn.getAttribute('data-group');
+    renderGrid();
+  });
+
+  boardSelect.addEventListener('change', function(){ filters.board = boardSelect.value; renderGrid(); });
+  subjectSelect.addEventListener('change', function(){ filters.subject = subjectSelect.value; renderGrid(); });
+  yearSelect.addEventListener('change', function(){ filters.year = yearSelect.value; syncYearTiles(); renderGrid(); });
+  document.getElementById('filter-search').addEventListener('input', function(e){ filters.text = e.target.value; renderGrid(); });
+
+  document.getElementById('hero-search-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    var level = document.getElementById('hero-level').value;
+    var text = document.getElementById('hero-text').value;
+    filters.level = level;
+    filters.text = text;
+    document.querySelectorAll('#level-pills .pill').forEach(function(p){
+      p.classList.toggle('active', p.getAttribute('data-level') === level);
+    });
+    if (level === 'SSC' || level === 'HSC'){
+      groupPillsEl.style.display = 'flex';
+    } else {
+      groupPillsEl.style.display = 'none';
+      filters.group = '';
+      groupPillsEl.querySelectorAll('.pill').forEach(function(p){ p.classList.remove('active'); });
+      groupPillsEl.querySelector('[data-group=""]').classList.add('active');
+    }
+    document.getElementById('filter-search').value = text;
+    renderGrid();
+    document.getElementById('browse').scrollIntoView({behavior:'smooth'});
+  });
+
+  renderGrid();
+
+  // ---- Year picker ----
+  var yearPickerGrid = document.getElementById('year-picker-grid');
+  var pickerYears = [];
+  for (var y = 2027; y >= 2015; y--) { pickerYears.push(y); }
+  yearPickerGrid.innerHTML = pickerYears.map(function(y){
+    return '<button class="year-tile" data-year="' + y + '">' + y + '</button>';
+  }).join('');
+
+  function syncYearTiles(){
+    yearPickerGrid.querySelectorAll('.year-tile').forEach(function(t){
+      t.classList.toggle('active', t.getAttribute('data-year') === String(filters.year));
+    });
+  }
+
+  yearPickerGrid.querySelectorAll('.year-tile').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var y = btn.getAttribute('data-year');
+      filters.year = y;
+      yearSelect.value = y;
+      syncYearTiles();
+      renderGrid();
+      document.getElementById('browse').scrollIntoView({behavior:'smooth'});
+    });
+  });
+
+  // ---- Cart (in-memory only) ----
+  var cart = [];
+  var cartBtn = document.getElementById('cart-btn');
+  var cartPanel = document.getElementById('cart-panel');
+  var overlay = document.getElementById('overlay');
+  var cartBadge = document.getElementById('cart-badge');
+  var cartItemsEl = document.getElementById('cart-items');
+  var cartTotalEl = document.getElementById('cart-total');
+
+  function addToCart(id){
+    var paper = papers.find(function(p){ return p.id === id; });
+    if (!paper) return;
+    cart.push(paper);
+    renderCart();
+    openCart();
+  }
+
+  function removeFromCart(index){
+    cart.splice(index, 1);
+    renderCart();
+  }
+
+  function renderCart(){
+    cartBadge.style.display = cart.length ? 'flex' : 'none';
+    cartBadge.textContent = cart.length;
+    if (cart.length === 0){
+      cartItemsEl.innerHTML = '<div class="cart-empty">Your cart is empty.</div>';
+    } else {
+      cartItemsEl.innerHTML = cart.map(function(p, i){
+        return '<div class="cart-item">' +
+          '<div><div class="name">' + p.subject + ' &mdash; ' + p.board + '</div>' +
+          '<div class="meta">' + p.level + ' &middot; ' + p.year + '</div>' +
+          '<button data-remove="' + i + '">Remove</button></div>' +
+          '<div class="card-price" style="font-size:0.95rem;">&#2547;' + p.price + '</div>' +
+        '</div>';
+      }).join('');
+      cartItemsEl.querySelectorAll('[data-remove]').forEach(function(btn){
+        btn.addEventListener('click', function(){ removeFromCart(parseInt(btn.getAttribute('data-remove'),10)); });
+      });
+    }
+    var total = cart.reduce(function(sum, p){ return sum + p.price; }, 0);
+    cartTotalEl.textContent = '\u09F3' + total;
+  }
+
+  function openCart(){
+    cartPanel.classList.add('open');
+    overlay.classList.add('show');
+  }
+  function closeCart(){
+    cartPanel.classList.remove('open');
+    overlay.classList.remove('show');
+  }
+  cartBtn.addEventListener('click', openCart);
+  document.getElementById('cart-close').addEventListener('click', closeCart);
+  overlay.addEventListener('click', closeCart);
+
+  // ---- Integrated single-file checkout ----
+  var paymentScreen = document.getElementById('payment-screen');
+  var paymentForm = document.getElementById('payment-form');
+  var paymentSuccess = document.getElementById('payment-success');
+  var paymentCancel = document.getElementById('payment-cancel');
+  var payAmount = document.getElementById('pay-amount');
+  var payOrderInfo = document.getElementById('pay-order-info');
+  var payMethodTitle = document.getElementById('pay-method-title');
+  var payNumber = document.getElementById('pay-number');
+  var trxInput = document.getElementById('trx-input');
+  var timerEl = document.getElementById('pay-timer');
+  var currentMethod = 'bkash';
+  var paymentTimer = null;
+  var remaining = 600;
+
+  function resetPaymentView(){
+    paymentForm.style.display='block';
+    paymentSuccess.classList.remove('show');
+    paymentCancel.classList.remove('show');
+    trxInput.value='';
+    remaining=600;
+    clearInterval(paymentTimer);
+    timerEl.textContent='10:00';
+  }
+  function startTimer(){
+    clearInterval(paymentTimer);
+    paymentTimer=setInterval(function(){
+      remaining--;
+      var m=Math.floor(remaining/60), s=remaining%60;
+      timerEl.textContent=m+':'+String(s).padStart(2,'0');
+      if(remaining<=0){
+        clearInterval(paymentTimer);
+        paymentForm.style.display='none';
+        paymentCancel.classList.add('show');
+        document.getElementById('cancel-details').textContent='The payment time expired. No payment was verified.';
+      }
+    },1000);
+  }
+  function openPayment(method){
+    if(!cart.length){
+      alert('Your cart is empty. Add a paper first.');
+      return;
+    }
+    currentMethod=method||'bkash';
+    var total=cart.reduce(function(sum,p){return sum+p.price;},0);
+    payAmount.textContent=total;
+    payOrderInfo.textContent='Order: PB-'+Date.now().toString().slice(-8)+' · '+cart.length+' paper(s)';
+    payMethodTitle.textContent='Send payment to '+(currentMethod==='bkash'?'bKash':'Nagad');
+    // The supplied bKash number is retained for this payment page.
+    payNumber.textContent='01750633432';
+    resetPaymentView();
+    paymentScreen.classList.add('show');
+    paymentScreen.setAttribute('aria-hidden','false');
+    startTimer();
+    closeCart();
+  }
+  document.getElementById('checkout-btn').addEventListener('click',function(){
+    openPayment('bkash');
+  });
+  document.getElementById('copy-number').addEventListener('click',async function(){
+    try{ await navigator.clipboard.writeText(payNumber.textContent); this.textContent='Copied ✓'; }
+    catch(e){ this.textContent='Copy failed'; }
+    setTimeout(()=>this.textContent='Copy Number',1200);
+  });
+  document.getElementById('submit-trx').addEventListener('click',function(){
+    var trx=trxInput.value.trim();
+    if(!trx){trxInput.focus();alert('Please enter the Transaction ID (TrxID).');return;}
+    clearInterval(paymentTimer);
+    var method=currentMethod==='bkash'?'bKash':'Nagad';
+    document.getElementById('success-details').textContent='Your '+method+' TrxID '+trx+' was submitted. Order amount: ৳'+payAmount.textContent+'.';
+    paymentForm.style.display='none';
+    paymentSuccess.classList.add('show');
+    try{localStorage.setItem('lastPayment',JSON.stringify({method:method,trxID:trx,amount:payAmount.textContent,time:new Date().toISOString()}));}catch(e){}
+  });
+  document.getElementById('back-payment').addEventListener('click',function(){
+    clearInterval(paymentTimer);
+    paymentForm.style.display='none';
+    paymentCancel.classList.add('show');
+  });
+  document.getElementById('retry-payment').addEventListener('click',function(){
+    resetPaymentView(); startTimer();
+  });
+  document.getElementById('finish-payment').addEventListener('click',function(){
+    paymentScreen.classList.remove('show');
+    paymentScreen.setAttribute('aria-hidden','true');
+    cart=[];
+    renderCart();
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+
+  renderCart();
+</script>
+
+
+<script id="price-and-checking-override">
+document.addEventListener('DOMContentLoaded', function () {
+  // Make every displayed product price 2500 BDT.
+  document.querySelectorAll('[data-price]').forEach(function(el) {
+    el.setAttribute('data-price', '2500');
+  });
+  document.querySelectorAll('.price, .product-price, [class*="price"]').forEach(function(el) {
+    const text = el.textContent || '';
+    if (/৳|BDT|tk/i.test(text)) el.textContent = '৳2,500';
+  });
+
+  const submit = document.getElementById('submit-trx');
+  const screen = document.getElementById('payment-screen');
+  const form = document.getElementById('payment-form');
+  if (!submit || !screen) return;
+
+  submit.addEventListener('click', function (e) {
+    e.preventDefault();
+    e.stopImmediatePropagation();
+
+    const input = document.getElementById('trx-input');
+    const trx = input ? input.value.trim() : '';
+    if (!trx) {
+      if (input) input.focus();
+      return;
+    }
+
+    try {
+      localStorage.setItem('proshnobank_last_payment', JSON.stringify({
+        trxId: trx,
+        amount: '৳2,500',
+        status: 'Under Checking',
+        time: new Date().toISOString()
+      }));
+    } catch (_) {}
+
+    if (form) form.style.display = 'none';
+    ['payment-success','payment-cancel'].forEach(function(id) {
+      const el = document.getElementById(id);
+      if (el) el.style.display = 'none';
+    });
+
+    let checking = document.getElementById('payment-checking');
+    if (!checking) {
+      checking = document.createElement('div');
+      checking.id = 'payment-checking';
+      checking.style.cssText = 'text-align:center;padding:40px 20px;';
+      checking.innerHTML =
+        '<div style="font-size:46px">⏳</div>' +
+        '<h2 style="margin:12px 0 8px">Under Checking</h2>' +
+        '<p style="color:#64748b;margin:0">TrxID submitted. Please wait...</p>';
+      screen.appendChild(checking);
+    }
+    checking.style.display = 'block';
+
+    // After checking is shown, return to the previous/main page.
+    setTimeout(function () {
+      checking.style.display = 'none';
+      screen.classList.remove('show');
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    }, 2500);
+  }, true);
+});
+</script>
+
+<button id="pay-binance" type="button">Binance</button>
+
+<script id="new-tab-payment-methods">
+(function () {
+  function openPaymentTab(method) {
+    var amount = '৳2,500';
+    var account = method === 'Binance' ? '873076865' : '01750633432';
+    var label = method === 'Binance' ? 'Binance ID' : (method === 'bKash' ? 'bKash Number' : 'Nagad Number');
+
+    var w = window.open('', '_blank');
+    if (!w) {
+      alert('Please allow pop-ups to open the payment page in a new tab.');
+      return;
+    }
+
+    w.document.open();
+    w.document.write(`<!doctype html><html><head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>${method} Payment</title>
+    <style>
+      body{font-family:Arial,sans-serif;background:#f8fafc;margin:0;padding:24px;color:#0f172a}
+      .box{max-width:430px;margin:35px auto;background:#fff;padding:24px;border-radius:18px;box-shadow:0 8px 30px rgba(0,0,0,.08)}
+      h1{margin:0 0 8px;font-size:24px}.muted{color:#64748b}
+      .account{font-size:24px;font-weight:800;text-align:center;padding:16px;margin:18px 0;background:#f1f5f9;border-radius:12px}
+      input{width:100%;box-sizing:border-box;padding:13px;border:1px solid #cbd5e1;border-radius:10px;margin:8px 0 14px;font-size:16px}
+      button{width:100%;padding:13px;border:0;border-radius:10px;background:#111827;color:#fff;font-weight:700;font-size:16px}
+      .checking{text-align:center;padding:30px 0}.clock{font-size:46px}
+    </style></head><body><div class="box">
+      <h1>${method} Payment</h1>
+      <p class="muted">Amount: <b>${amount}</b></p>
+      <div class="account">${label}<br>${account}</div>
+      <label>TrxID</label>
+      <input id="trx" placeholder="Enter TrxID" autocomplete="off">
+      <button id="submit">Submit TrxID</button>
+    </div>
+    <script>
+      document.getElementById('submit').onclick=function(){
+        var t=document.getElementById('trx').value.trim();
+        if(!t){document.getElementById('trx').focus();return;}
+        document.querySelector('.box').innerHTML='<div class="checking"><div class="clock">⏳</div><h2>Under Checking</h2><p class="muted">TrxID submitted. Please wait...</p></div>';
+        setTimeout(function(){window.close();},2500);
+      };
+    <\/script></body></html>`);
+    w.document.close();
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var b = document.getElementById('pay-bkash');
+    var n = document.getElementById('pay-nagad');
+    var bn = document.getElementById('pay-binance');
+
+    if (b) b.addEventListener('click', function(e){e.preventDefault();e.stopImmediatePropagation();openPaymentTab('bKash');}, true);
+    if (n) n.addEventListener('click', function(e){e.preventDefault();e.stopImmediatePropagation();openPaymentTab('Nagad');}, true);
+    if (bn) bn.addEventListener('click', function(e){e.preventDefault();e.stopImmediatePropagation();openPaymentTab('Binance');}, true);
+  });
+})();
+</script>
+
+</body>
+</html>

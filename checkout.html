@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pay — Checkout</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #16191c;
+    --charcoal: #1f2327;
+    --paper: #f2ece0;
+    --paper-line: #d9cfba;
+    --paper-muted: #7c7566;
+    --bkash: #e2136e;
+    --nagad: #f6871f;
+    --ok: #3f6b4a;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--charcoal);
+    background-image:
+      radial-gradient(circle at 15% 10%, rgba(255,255,255,0.04), transparent 40%),
+      radial-gradient(circle at 85% 90%, rgba(255,255,255,0.03), transparent 40%);
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: var(--paper);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 16px;
+  }
+
+  .ticket {
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+    background: var(--paper);
+    color: var(--ink);
+    border-radius: 4px;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.45);
+    overflow: hidden;
+  }
+
+  .ticket__head {
+    padding: 28px 28px 22px;
+  }
+
+  .ticket__brand {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 22px;
+  }
+
+  .ticket__brand span:first-child {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 19px;
+    letter-spacing: 0.01em;
+  }
+
+  .ticket__brand span:last-child {
+    font-size: 12px;
+    color: var(--paper-muted);
+  }
+
+  .amount-row {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    border-bottom: 1px solid var(--paper-line);
+    padding-bottom: 18px;
+  }
+
+  .amount-row .currency {
+    font-family: 'Fraunces', serif;
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--paper-muted);
+  }
+
+  .amount-row input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    font-family: 'Fraunces', serif;
+    font-size: 40px;
+    font-weight: 600;
+    color: var(--ink);
+    width: 100%;
+    min-width: 0;
+  }
+
+  .amount-row input:focus { outline: none; }
+  .amount-row input::placeholder { color: #c9c0ac; }
+
+  .field {
+    margin-top: 18px;
+  }
+
+  .field label {
+    display: block;
+    font-size: 12px;
+    color: var(--paper-muted);
+    margin-bottom: 6px;
+  }
+
+  .field input[type="text"] {
+    width: 100%;
+    border: 1px solid var(--paper-line);
+    background: #fbf8f2;
+    border-radius: 3px;
+    padding: 10px 12px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    color: var(--ink);
+  }
+
+  .field input[type="text"]:focus {
+    outline: none;
+    border-color: var(--paper-muted);
+  }
+
+  /* perforated tear line between the ticket "stub" and the payment section */
+  .perforation {
+    position: relative;
+    height: 0;
+    border-top: 2px dashed #cdc2a8;
+    margin: 0 0;
+  }
+
+  .perforation::before,
+  .perforation::after {
+    content: "";
+    position: absolute;
+    top: -11px;
+    width: 22px;
+    height: 22px;
+    background: var(--charcoal);
+    border-radius: 50%;
+  }
+
+  .perforation::before { left: -11px; }
+  .perforation::after { right: -11px; }
+
+  .ticket__pay {
+    padding: 24px 28px 28px;
+  }
+
+  .ticket__pay p.label {
+    font-size: 12px;
+    color: var(--paper-muted);
+    margin: 0 0 12px;
+  }
+
+  .methods {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  button.method {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    border: none;
+    border-radius: 3px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.1s ease, opacity 0.15s ease;
+  }
+
+  button.method:active { transform: scale(0.98); }
+  button.method:disabled { opacity: 0.55; cursor: not-allowed; }
+
+  button.method .arrow { opacity: 0.8; font-weight: 400; }
+
+  .bkash { background: var(--bkash); }
+  .nagad { background: var(--nagad); }
+
+  #status {
+    margin-top: 16px;
+    font-size: 13px;
+    min-height: 18px;
+    color: var(--paper-muted);
+  }
+
+  #status.error { color: #a83b3b; }
+  #status.ok { color: var(--ok); }
+
+  .fine-print {
+    margin-top: 18px;
+    font-size: 11px;
+    line-height: 1.5;
+    color: var(--paper-muted);
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+  <div class="ticket">
+    <div class="ticket__head">
+      <div class="ticket__brand">
+        <span>Pay merchant</span>
+        <span>Order checkout</span>
+      </div>
+
+      <div class="amount-row">
+        <span class="currency">৳</span>
+        <input type="number" id="amount" inputmode="decimal" min="1" step="0.01" placeholder="0.00" />
+      </div>
+
+      <div class="field">
+        <label for="note">What's this for? (optional)</label>
+        <input type="text" id="note" placeholder="e.g. Invoice #104" />
+      </div>
+    </div>
+
+    <div class="perforation"></div>
+
+    <div class="ticket__pay">
+      <p class="label">Choose how to pay</p>
+      <div class="methods">
+        <button class="method bkash" id="pay-bkash">
+          <span>Pay with bKash</span>
+          <span class="arrow">→</span>
+        </button>
+        <button class="method nagad" id="pay-nagad">
+          <span>Pay with Nagad</span>
+          <span class="arrow">→</span>
+        </button>
+      </div>
+      <div id="status"></div>
+      <p class="fine-print">You'll be redirected to bKash or Nagad to approve the payment securely. No card or account details are stored on this page.</p>
+    </div>
+  </div>
+
+<script>
+  // This page only collects the amount and starts the flow — the actual
+  // charge is authorized by your backend, which holds your bKash/Nagad
+  // API credentials. Point this at your own endpoint.
+  const PAYMENT_ENDPOINT = '/api/pay/pay';
+
+  const statusEl = document.getElementById('status');
+  const amountEl = document.getElementById('amount');
+  const noteEl = document.getElementById('note');
+  const buttons = document.querySelectorAll('button.method');
+
+  function setStatus(text, kind) {
+    statusEl.textContent = text;
+    statusEl.className = kind || '';
+  }
+
+  async function pay(method) {
+    const amount = amountEl.value;
+    if (!amount || Number(amount) <= 0) {
+      setStatus('Enter an amount before continuing.', 'error');
+      amountEl.focus();
+      return;
+    }
+
+    buttons.forEach(b => b.disabled = true);
+    setStatus(`Connecting to ${method === 'bkash' ? 'bKash' : 'Nagad'}…`);
+
+    try {
+      const res = await fetch(PAYMENT_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ amount, method, note: noteEl.value })
+      });
+
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Could not start the payment.');
+
+      window.location.href = data.redirectUrl;
+    } catch (err) {
+      setStatus(err.message || 'Something went wrong. Please try again.', 'error');
+      buttons.forEach(b => b.disabled = false);
+    }
+  }
+
+  document.getElementById('pay-bkash').addEventListener('click', () => pay('bkash'));
+  document.getElementById('pay-nagad').addEventListener('click', () => pay('nagad'));
+</script>
+
+</body>
+</html>

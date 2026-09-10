@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Payment Not Completed</title>
+<style>
+  body { font-family: -apple-system, sans-serif; background: #f7f7f9; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin:0; }
+  .card { background: #fff; border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.08); padding: 40px; text-align: center; max-width: 400px; }
+  .mark { font-size: 48px; }
+  h1 { font-size: 20px; margin: 12px 0 8px; color: #1a1a1a; }
+  p { color: #666; font-size: 14px; }
+  a { display: inline-block; margin-top: 20px; color: #e2136e; text-decoration: none; font-weight: 600; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="mark">⚠️</div>
+    <h1>Payment not completed</h1>
+    <p id="details">Your payment was cancelled or could not be processed.</p>
+    <a href="/">Try again</a>
+  </div>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const method = params.get('method');
+  const status = params.get('status');
+  const detailsEl = document.getElementById('details');
+  detailsEl.textContent = `Your ${method || ''} payment was ${status || 'not completed'}. No charge was made.`;
+</script>
+</body>
+</html>
